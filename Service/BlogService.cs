@@ -18,6 +18,8 @@ namespace Service
 
 		public Blog AddBlog(string name, string url)
 		{
+            if (url == null)
+                url = string.Empty;
 			var blog = new Blog { Name = name, Url = url};
 			_context.Blogs.Add(blog);
 			_context.SaveChanges();
